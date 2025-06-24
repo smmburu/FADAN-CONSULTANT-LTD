@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fadan Consultant Limited - FMCG Consulting Services</title>
+<meta name="description" content="Fadan Consultant Limited is a Nairobi-based consulting firm specializing in FMCG sector services including distribution strategy, route-to-market planning, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0047AB',secondary:'#4A4A4A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Roboto', sans-serif;
+color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20in%20modern%20office%20with%20FMCG%20products%20displayed%2C%20executives%20discussing%20strategy%2C%20clean%20corporate%20environment%2C%20bright%20natural%20lighting%2C%20business%20professionals%20in%20formal%20attire%2C%20panoramic%20view%20of%20Nairobi%20skyline%20visible%20through%20windows%2C%20high-end%20office%20interior&width=1600&height=800&seq=hero1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.cta-section {
+background-image: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.9)), url('https://readdy.ai/api/search-image?query=abstract%20business%20background%20with%20subtle%20patterns%2C%20professional%20corporate%20design%20elements%2C%20light%20geometric%20shapes%2C%20modern%20business%20environment%2C%20subtle%20texture%2C%20minimalist%20design&width=1600&height=600&seq=cta1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #0047AB;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.active-nav::after {
+width: 100%;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #0047AB;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="flex items-center space-x-3">
+<span class="font-['Pacifico'] text-primary text-2xl">Fadan</span>
+<div class="hidden md:block">
+<h1 class="text-lg font-semibold text-gray-800">Fadan Consultant Limited</h1>
+<p class="text-xs text-gray-500">Member of Strathwell Group</p>
+</div>
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+<a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+<a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
+<a href="#projects" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
+<a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-2x"></i>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+<div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+<a href="#" class="text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+<a href="#about" class="text-gray-800 font-medium py-2 border-b border-gray-100">About Us</a>
+<a href="#services" class="text-gray-800 font-medium py-2 border-b border-gray-100">Services</a>
+<a href="#projects" class="text-gray-800 font-medium py-2 border-b border-gray-100">Projects</a>
+<a href="#contact" class="text-gray-800 font-medium py-2">Contact</a>
+</div>
+</div>
+</header>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254720680272" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 transition-colors flex items-center justify-center w-14 h-14">
+<i class="ri-whatsapp-line ri-2x"></i>
+</a>
+<!-- Hero Section -->
+<section class="hero-section h-screen flex items-center pt-16">
+<div class="container mx-auto px-4 w-full">
+<div class="max-w-3xl text-white">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Transforming FMCG Distribution Across East Africa</h1>
+<p class="text-lg md:text-xl mb-8 max-w-2xl">Strategic consulting solutions to help your brand grow, optimize operations, and retain top talent in the competitive FMCG sector.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact" class="bg-primary hover:bg-blue-700 text-white font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+Schedule Consultation
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+<a href="#services" class="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+Explore Services
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Company Introduction -->
+<section class="py-20 bg-white" id="about">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold mb-6 text-gray-800">About Fadan Consultant Limited</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Established in 2015, Fadan Consultant Limited is a premier consulting firm based in Nairobi and a proud member of the Strathwell Group. We specialize in providing strategic solutions for the Fast-Moving Consumer Goods (FMCG) sector across East Africa.</p>
+<p class="text-gray-600 mb-6 leading-relaxed">Our team of experienced consultants works closely with manufacturers, distributors, and retailers to optimize distribution networks, develop effective route-to-market strategies, and enhance overall market performance.</p>
+<p class="text-gray-600 leading-relaxed">With a deep understanding of local markets and consumer behavior, we help our clients navigate the complexities of the FMCG landscape, driving sustainable growth and competitive advantage.</p>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-6">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+<h3 class="text-4xl font-bold text-primary mb-2">10+</h3>
+<p class="text-gray-600">Years of Experience</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+<h3 class="text-4xl font-bold text-primary mb-2">150+</h3>
+<p class="text-gray-600">Clients Served</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+<h3 class="text-4xl font-bold text-primary mb-2">300+</h3>
+<p class="text-gray-600">Projects Completed</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+<h3 class="text-4xl font-bold text-primary mb-2">5</h3>
+<p class="text-gray-600">East African Countries</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Our Leadership</h2>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/3">
+<img src="https://readdy.ai/api/search-image?query=professional%20African%20businessman%20in%20formal%20business%20attire%2C%20confident%20pose%2C%20studio%20portrait%20with%20neutral%20background%2C%20professional%20headshot%2C%20clean%20corporate%20look%2C%2040s%20age%2C%20well-groomed%2C%20serious%20expression&width=600&height=600&seq=ceo1&orientation=squarish" alt="Festus Chunga John - CEO" class="rounded-lg shadow-md w-full h-auto object-cover">
+</div>
+<div class="md:w-2/3">
+<h3 class="text-2xl font-bold mb-3 text-gray-800">Festus Chunga John</h3>
+<p class="text-primary font-medium mb-6">Founder & Chief Executive Officer</p>
+<p class="text-gray-600 mb-6 leading-relaxed">With over 15 years of experience in the FMCG sector, Festus has established himself as a thought leader in distribution strategy and route-to-market planning across East Africa. Prior to founding Fadan Consultant Limited in 2015, he held senior positions at several multinational FMCG companies.</p>
+<p class="text-gray-600 mb-6 leading-relaxed">Festus holds an MBA from Strathmore Business School and a Bachelor's degree in Business Administration from the University of Nairobi. His innovative approach to solving complex distribution challenges has helped numerous brands achieve significant market growth.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="mailto:fadanconsulting@gmail.com" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors">
+<i class="ri-mail-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-20 bg-white" id="services">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 text-gray-800">Our Specialized FMCG Services</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">We offer comprehensive consulting solutions tailored to the unique challenges of the Fast-Moving Consumer Goods sector in East Africa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-route-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Distribution Strategy</h3>
+<p class="text-gray-600 mb-6">We develop comprehensive distribution strategies that optimize your supply chain, reduce costs, and ensure your products reach consumers efficiently across urban and rural markets.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-map-pin-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Route-to-Market Planning</h3>
+<p class="text-gray-600 mb-6">Our tailored route-to-market strategies help you navigate the complex East African retail landscape, identifying the most effective channels to reach your target consumers.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-line-chart-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Consumer Insights</h3>
+<p class="text-gray-600 mb-6">We conduct in-depth market research to uncover valuable consumer insights, helping you understand purchasing behavior, preferences, and trends specific to East African markets.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service 4 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-store-2-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Merchandising</h3>
+<p class="text-gray-600 mb-6">Our merchandising solutions enhance product visibility and appeal at the point of sale, driving consumer engagement and increasing purchase conversion rates.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service 5 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-megaphone-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Product Promotion</h3>
+<p class="text-gray-600 mb-6">We design and implement effective promotional campaigns that resonate with local consumers, driving brand awareness, product trials, and repeat purchases.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service 6 -->
+<div class="service-card bg-gray-50 rounded-lg p-8 shadow-sm transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+<i class="ri-team-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">Leadership Training</h3>
+<p class="text-gray-600 mb-6">Our specialized training programs develop the skills and capabilities of your sales and distribution teams, helping you retain top talent and drive operational excellence.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-20 bg-gray-50" id="projects">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 text-gray-800">Our Projects</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">Explore some of our successful projects that have helped FMCG brands achieve significant growth across East Africa.</p>
+</div>
+<div class="mb-8 flex justify-center">
+<div class="inline-flex bg-gray-100 p-1 rounded-full">
+<button class="project-filter-btn active bg-primary text-white py-2 px-6 rounded-full whitespace-nowrap font-medium">All Projects</button>
+<button class="project-filter-btn py-2 px-6 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap font-medium">Distribution</button>
+<button class="project-filter-btn py-2 px-6 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap font-medium">Merchandising</button>
+<button class="project-filter-btn py-2 px-6 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap font-medium">Training</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=professional%20merchandising%20display%20of%20FMCG%20products%20in%20African%20supermarket%2C%20well-organized%20shelves%2C%20product%20visibility%20optimization%2C%20clean%20retail%20environment%2C%20modern%20supermarket%20interior&width=600&height=400&seq=project1&orientation=landscape" alt="Merchandising Optimization Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Merchandising</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Merchandising Optimization for Kenyan Beverage Brand</h3>
+<p class="text-gray-600 mb-4">Increased product visibility by 45% across 200+ retail locations in Nairobi, resulting in a 28% sales growth within 3 months.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=logistics%20and%20distribution%20network%20for%20FMCG%20in%20East%20Africa%2C%20delivery%20trucks%2C%20warehouse%20operations%2C%20efficient%20supply%20chain%2C%20professional%20logistics%20management%2C%20workers%20handling%20consumer%20goods&width=600&height=400&seq=project2&orientation=landscape" alt="Distribution Network Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Distribution</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Distribution Network Redesign for FMCG Manufacturer</h3>
+<p class="text-gray-600 mb-4">Optimized distribution routes across Tanzania, reducing delivery times by 35% and cutting logistics costs by 22%.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=professional%20training%20session%20for%20FMCG%20sales%20team%20in%20East%20Africa%2C%20corporate%20training%20environment%2C%20diverse%20business%20professionals%20engaged%20in%20workshop%2C%20classroom%20setting%20with%20presentation%20screen%2C%20business%20attire&width=600&height=400&seq=project3&orientation=landscape" alt="Sales Team Training Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Training</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Sales Leadership Training Program</h3>
+<p class="text-gray-600 mb-4">Developed and implemented a comprehensive training program for 120+ sales managers across East Africa, reducing turnover by 40%.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=market%20research%20team%20conducting%20consumer%20survey%20in%20East%20African%20market%2C%20clipboard%20surveys%2C%20professional%20researchers%20interviewing%20local%20consumers%2C%20urban%20market%20setting%2C%20data%20collection&width=600&height=400&seq=project4&orientation=landscape" alt="Consumer Insights Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Consumer Insights</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Consumer Behavior Study for Household Products</h3>
+<p class="text-gray-600 mb-4">Conducted extensive market research across Uganda, identifying key consumer preferences that informed successful product reformulation.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=product%20launch%20event%20for%20FMCG%20brand%20in%20Nairobi%2C%20promotional%20display%2C%20brand%20ambassadors%2C%20product%20sampling%2C%20professional%20marketing%20event%2C%20corporate%20branding&width=600&height=400&seq=project5&orientation=landscape" alt="Product Launch Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Product Promotion</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">New Product Launch Campaign</h3>
+<p class="text-gray-600 mb-4">Designed and executed a multi-channel launch strategy for a new snack brand, achieving 85% distribution coverage within 6 weeks.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=route%20to%20market%20planning%20session%2C%20business%20professionals%20analyzing%20maps%20and%20data%2C%20strategic%20planning%20meeting%2C%20FMCG%20distribution%20planning%2C%20professional%20office%20environment%20with%20charts%20and%20maps&width=600&height=400&seq=project6&orientation=landscape" alt="Route-to-Market Project" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Route-to-Market</span>
+<h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Rural Market Expansion Strategy</h3>
+<p class="text-gray-600 mb-4">Developed an innovative route-to-market approach for reaching underserved rural communities in Rwanda, increasing market penetration by 65%.</p>
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/42fba839-e900-4b86-ba6a-92ece697e839" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+View Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 text-gray-800">What Our Clients Say</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">Hear from the FMCG brands that have transformed their operations with our consulting services.</p>
+</div>
+<div class="testimonial-slider relative">
+<div class="overflow-hidden">
+<div class="testimonial-wrapper flex transition-transform duration-500" id="testimonial-wrapper">
+<!-- Testimonial 1 -->
+<div class="testimonial-slide min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6 italic">"Fadan's distribution strategy completely transformed our supply chain efficiency. Their deep understanding of East African markets helped us overcome logistical challenges we'd been facing for years."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20African%20female%20executive%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait%2C%20confident%20expression&width=100&height=100&seq=test1&orientation=squarish" alt="Sarah Mwangi" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-bold text-gray-800">Sarah Mwangi</h4>
+<p class="text-gray-500 text-sm">Supply Chain Director, Kenyan Beverages Ltd</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-slide min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6 italic">"The merchandising optimization program developed by Fadan has significantly increased our product visibility and sales. Their team's attention to detail and understanding of consumer behavior is exceptional."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20African%20male%20executive%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait%2C%20confident%20expression&width=100&height=100&seq=test2&orientation=squarish" alt="Daniel Ochieng" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-bold text-gray-800">Daniel Ochieng</h4>
+<p class="text-gray-500 text-sm">Marketing Manager, Tanzania Consumer Products</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-slide min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6 italic">"The leadership training program developed by Fadan has been transformative for our sales team. We've seen improved performance metrics and significantly reduced turnover since implementation."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20African%20female%20executive%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait%2C%20confident%20expression&width=100&height=100&seq=test3&orientation=squarish" alt="Grace Mutua" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-bold text-gray-800">Grace Mutua</h4>
+<p class="text-gray-500 text-sm">HR Director, Uganda Foods Corporation</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-slide min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+<div class="flex items-center mb-6">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6 italic">"Fadan's consumer insights research provided us with invaluable data that shaped our product development strategy. Their understanding of local preferences helped us create products that truly resonate with East African consumers."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20African%20male%20executive%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait%2C%20confident%20expression&width=100&height=100&seq=test4&orientation=squarish" alt="Robert Kigera" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-bold text-gray-800">Robert Kigera</h4>
+<p class="text-gray-500 text-sm">Product Development Lead, Rwanda Consumer Goods</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8 space-x-2">
+<button class="testimonial-dot w-3 h-3 rounded-full bg-primary opacity-100"></button>
+<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 opacity-50"></button>
+<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 opacity-50"></button>
+<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 opacity-50"></button>
+</div>
+</div>
+<div class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-70">
+<div class="w-32 h-16 flex items-center justify-center">
+<i class="ri-microsoft-fill ri-3x text-gray-400"></i>
+</div>
+<div class="w-32 h-16 flex items-center justify-center">
+<i class="ri-amazon-fill ri-3x text-gray-400"></i>
+</div>
+<div class="w-32 h-16 flex items-center justify-center">
+<i class="ri-netflix-fill ri-3x text-gray-400"></i>
+</div>
+<div class="w-32 h-16 flex items-center justify-center">
+<i class="ri-google-fill ri-3x text-gray-400"></i>
+</div>
+<div class="w-32 h-16 flex items-center justify-center">
+<i class="ri-apple-fill ri-3x text-gray-400"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section py-20 text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6">Ready to Transform Your FMCG Business?</h2>
+<p class="text-lg mb-8">Schedule a consultation with our expert team to discuss how we can help optimize your distribution strategy, enhance your market presence, and drive sustainable growth.</p>
+<a href="#contact" class="bg-white text-primary hover:bg-gray-100 font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+Get Started
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 bg-white" id="contact">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 text-gray-800">Contact Us</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">Reach out to discuss how our consulting services can help your FMCG business thrive in East African markets.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2">
+<form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="your.email@company.com">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="+254 XXX XXX XXX">
+</div>
+<div class="mb-6">
+<label for="company" class="block text-gray-700 font-medium mb-2">Company Name</label>
+<input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your company">
+</div>
+<div class="mb-6">
+<label for="service" class="block text-gray-700 font-medium mb-2">Service of Interest</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary pr-8">
+<option value="" disabled selected>Select a service</option>
+<option value="distribution">Distribution Strategy</option>
+<option value="rtm">Route-to-Market Planning</option>
+<option value="insights">Consumer Insights</option>
+<option value="merchandising">Merchandising</option>
+<option value="promotion">Product Promotion</option>
+<option value="training">Leadership Training</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded resize-none focus:border-primary" placeholder="Tell us about your project or inquiry"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors">
+Send Message
+</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+<h3 class="text-xl font-bold mb-6 text-gray-800">Contact Information</h3>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-4 shrink-0">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-800 mb-1">Phone</h4>
+<p class="text-gray-600">+254 720 680272</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-4 shrink-0">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-800 mb-1">Email</h4>
+<p class="text-gray-600">fadanconsulting@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-4 shrink-0">
+<i class="ri-global-line"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-800 mb-1">Website</h4>
+<p class="text-gray-600">fadan.co.ke</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-4 shrink-0">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-800 mb-1">Office Location</h4>
+<p class="text-gray-600">Strathwell Business Center, 3rd Floor<br>Ngong Road, Nairobi, Kenya</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-200 rounded-lg overflow-hidden h-80 shadow-sm">
+<div class="w-full h-full" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center mb-6">
+<span class="font-['Pacifico'] text-white text-3xl">Fadan</span>
+</div>
+<p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/fadanconsultant/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-white rounded-full hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="https://www.linkedin.com/company/fadan-consulting-and-services" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-white rounded-full hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Distribution Strategy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Route-to-Market Planning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consumer Insights</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Merchandising</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Product Promotion</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Leadership Training</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest insights on FMCG distribution in East Africa.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-2 w-full border-none rounded-l-lg text-gray-800 text-sm">
+<button type="submit" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg whitespace-nowrap transition-colors">
+Subscribe
+</button>
+</div>
+</form>
+<div class="flex items-center space-x-3">
+<span class="text-gray-400">Payment Methods:</span>
+<i class="ri-visa-fill text-xl text-gray-400"></i>
+<i class="ri-mastercard-fill text-xl text-gray-400"></i>
+<i class="ri-paypal-fill text-xl text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+<p>&copy; 2025 Fadan Consultant Limited. All rights reserved. Member of the Strathwell Group.</p>
+</div>
+</div>
+</footer>
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const header = document.querySelector('header');
+// Mobile menu toggle
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Sticky header
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.add('py-2');
+header.classList.remove('py-3');
+} else {
+header.classList.add('py-3');
+header.classList.remove('py-2');
+}
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+});
+</script>
+<script id="testimonial-slider-script">
+document.addEventListener('DOMContentLoaded', function() {
+const wrapper = document.getElementById('testimonial-wrapper');
+const dots = document.querySelectorAll('.testimonial-dot');
+let currentSlide = 0;
+const slideCount = dots.length;
+// Set initial position
+updateSliderPosition();
+// Auto slide every 5 seconds
+setInterval(nextSlide, 5000);
+// Dot navigation
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+currentSlide = index;
+updateSliderPosition();
+});
+});
+function nextSlide() {
+currentSlide = (currentSlide + 1) % slideCount;
+updateSliderPosition();
+}
+function updateSliderPosition() {
+// Calculate translation based on screen size
+let translateValue;
+if (window.innerWidth >= 768) {
+translateValue = -currentSlide * 33.333;
+} else {
+translateValue = -currentSlide * 100;
+}
+wrapper.style.transform = `translateX(${translateValue}%)`;
+// Update dots
+dots.forEach((dot, index) => {
+if (index === currentSlide) {
+dot.classList.add('bg-primary');
+dot.classList.remove('bg-gray-300');
+dot.classList.add('opacity-100');
+dot.classList.remove('opacity-50');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+dot.classList.remove('opacity-100');
+dot.classList.add('opacity-50');
+}
+});
+}
+// Handle window resize
+window.addEventListener('resize', updateSliderPosition);
+});
+</script>
+<script id="project-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.project-filter-btn');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+// Here you would typically filter the projects
+// For this demo, we're just showing the UI interaction
+});
+});
+});
+</script>
+</body>
+</html>

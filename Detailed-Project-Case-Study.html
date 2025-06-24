@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Merchandising Optimization for Kenyan Beverage Brand</title>
+<meta name="description" content="Explore how Fadan Consultant Limited increased product visibility by 45% across 200+ retail locations in Nairobi, resulting in a 28% sales growth within 3 months.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0047AB',secondary:'#4A4A4A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #0047AB;
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.2s ease-out;
+}
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%2520merchandising%2520display%2520of%2520beverage%2520products%2520in%2520Kenyan%2520supermarket%252C%2520well-organized%2520shelves%2520with%2520colorful%2520drinks%252C%2520product%2520visibility%2520optimization%252C%2520clean%2520retail%2520environment%252C%2520modern%2520supermarket%2520interior%2520with%2520bright%2520lighting%2520and%2520professional%2520branding&width=1600&height=800&seq=casestudy1&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+}
+.comparison-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.comparison-slider .before,
+.comparison-slider .after {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.comparison-slider .before {
+  left: 0;
+  background-image: url('https://readdy.ai/api/search-image?query=poorly%2520merchandised%2520beverage%2520display%2520in%2520Kenyan%2520supermarket%252C%2520disorganized%2520shelves%252C%2520poor%2520product%2520visibility%252C%2520cluttered%2520arrangement%252C%2520dim%2520lighting%252C%2520products%2520difficult%2520to%2520find%252C%2520unprofessional%2520presentation&width=800&height=400&seq=before1&orientation=landscape');
+  background-position: left center;
+}
+.comparison-slider .after {
+  right: 0;
+  background-image: url('https://readdy.ai/api/search-image?query=perfectly%2520merchandised%2520beverage%2520display%2520in%2520Kenyan%2520supermarket%252C%2520beautifully%2520organized%2520shelves%252C%2520excellent%2520product%2520visibility%252C%2520strategic%2520arrangement%252C%2520bright%2520lighting%252C%2520products%2520easy%2520to%2520find%252C%2520professional%2520presentation%2520with%2520brand%2520blocking&width=800&height=400&seq=after1&orientation=landscape');
+  background-position: right center;
+  width: 50%;
+}
+.comparison-slider .slider {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+}
+.comparison-slider .slider::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comparison-slider .slider::after {
+  content: '↔';
+  position: absolute;
+  color: #0047AB;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #0047AB;
+  transition: width 0.3s;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.active-nav::after {
+  width: 100%;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0047AB;
+}
+.section-nav li a.active {
+  color: #0047AB;
+  font-weight: 500;
+  border-left-color: #0047AB;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#" class="flex items-center space-x-3">
+      <span class="font-['Pacifico'] text-primary text-2xl">Fadan</span>
+      <div class="hidden md:block">
+        <h1 class="text-lg font-semibold text-gray-800">Fadan Consultant Limited</h1>
+        <p class="text-xs text-gray-500">Member of Strathwell Group</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+      <a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+      <a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
+      <a href="#projects" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
+      <a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700" id="mobile-menu-button">
+      <i class="ri-menu-line ri-2x"></i>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+    <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+      <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+      <a href="#about" class="text-gray-800 font-medium py-2 border-b border-gray-100">About Us</a>
+      <a href="#services" class="text-gray-800 font-medium py-2 border-b border-gray-100">Services</a>
+      <a href="#projects" class="text-gray-800 font-medium py-2 border-b border-gray-100">Projects</a>
+      <a href="#contact" class="text-gray-800 font-medium py-2">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- Back to Projects Button -->
+<div class="fixed left-6 top-24 z-40">
+  <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="flex items-center bg-white shadow-md rounded-full py-2 px-4 text-primary hover:bg-gray-50 transition-colors">
+    <i class="ri-arrow-left-line mr-2"></i>
+    <span class="font-medium">Back to Projects</span>
+  </a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section pt-24 pb-16 flex items-center">
+  <div class="container mx-auto px-4 w-full">
+    <div class="max-w-4xl text-white">
+      <div class="flex items-center mb-4">
+        <span class="text-xs font-semibold bg-primary py-1 px-3 rounded-full">Case Study</span>
+        <span class="ml-3 text-xs font-medium">June 2025</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Merchandising Optimization for Kenyan Beverage Brand</h1>
+      <p class="text-lg md:text-xl mb-8 max-w-3xl">How we increased product visibility by 45% across 200+ retail locations in Nairobi, resulting in a 28% sales growth within 3 months.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div class="bg-white bg-opacity-90 p-6 rounded-lg">
+        <p class="text-gray-500 text-sm mb-1">Client</p>
+        <h3 class="text-xl font-bold text-gray-800">Nairobi Refreshments Ltd</h3>
+        <p class="text-gray-600">Leading Kenyan Beverage Manufacturer</p>
+      </div>
+      <div class="bg-white bg-opacity-90 p-6 rounded-lg">
+        <p class="text-gray-500 text-sm mb-1">Industry</p>
+        <h3 class="text-xl font-bold text-gray-800">Food & Beverage</h3>
+        <p class="text-gray-600">FMCG Sector</p>
+      </div>
+      <div class="bg-white bg-opacity-90 p-6 rounded-lg">
+        <p class="text-gray-500 text-sm mb-1">Project Duration</p>
+        <h3 class="text-xl font-bold text-gray-800">3 Months</h3>
+        <p class="text-gray-600">January - March 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jump Links -->
+<section class="sticky top-16 bg-white shadow-sm z-30">
+  <div class="container mx-auto px-4">
+    <div class="flex overflow-x-auto py-4 no-scrollbar">
+      <a href="#overview" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Overview</a>
+      <a href="#challenge" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Challenge</a>
+      <a href="#approach" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Our Approach</a>
+      <a href="#implementation" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Implementation</a>
+      <a href="#results" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Results</a>
+      <a href="#testimonial" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Client Testimonial</a>
+      <a href="#team" class="whitespace-nowrap px-4 py-2 text-gray-700 font-medium hover:text-primary transition-colors">Project Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-12">
+  <div class="flex flex-col lg:flex-row gap-12">
+    <!-- Main Content -->
+    <div class="lg:w-3/4">
+      <!-- Overview Section -->
+      <section id="overview" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Project Overview</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+          <p class="text-gray-600 mb-6 leading-relaxed">Nairobi Refreshments Ltd, a leading beverage manufacturer in Kenya, approached Fadan Consultant Limited with a critical challenge: despite having quality products and strong brand recognition, they were experiencing suboptimal sales performance across retail locations in Nairobi.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">Initial analysis revealed that poor merchandising practices were significantly impacting product visibility and consumer purchasing decisions. The client's beverages were often poorly positioned, inconsistently stocked, and lacked strategic shelf placement across different retail formats.</p>
+          <p class="text-gray-600 leading-relaxed">Fadan was engaged to develop and implement a comprehensive merchandising optimization strategy that would enhance product visibility, improve brand presence, and ultimately drive sales growth across more than 200 retail locations in Nairobi.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-sm p-8">
+            <div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+              <i class="ri-target-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Project Objectives</h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Increase product visibility across all retail channels</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Develop standardized merchandising guidelines</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Optimize shelf space allocation and product placement</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Implement effective point-of-sale materials</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Train merchandising staff on best practices</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-sm p-8">
+            <div class="w-16 h-16 flex items-center justify-center bg-blue-100 text-primary rounded-lg mb-6">
+              <i class="ri-pie-chart-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Key Metrics</h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Product visibility score across retail locations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Share of shelf space compared to competitors</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Merchandising compliance rate</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Sales performance by retail channel</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
+                <span>Return on merchandising investment</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Challenge Section -->
+      <section id="challenge" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">The Challenge</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <p class="text-gray-600 mb-6 leading-relaxed">Through comprehensive market analysis and retail audits, we identified several critical challenges affecting Nairobi Refreshments' merchandising effectiveness:</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-red-100 text-red-500 rounded-full mr-3">
+                  <i class="ri-error-warning-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Inconsistent Implementation</h4>
+              </div>
+              <p class="text-gray-600">Merchandising standards varied significantly across different retail locations, creating an inconsistent brand experience for consumers.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-red-100 text-red-500 rounded-full mr-3">
+                  <i class="ri-error-warning-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Poor Shelf Positioning</h4>
+              </div>
+              <p class="text-gray-600">Products were frequently placed in low-visibility areas, reducing the likelihood of consumer engagement and purchase.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-red-100 text-red-500 rounded-full mr-3">
+                  <i class="ri-error-warning-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Inadequate Staff Training</h4>
+              </div>
+              <p class="text-gray-600">Merchandising personnel lacked proper training on product placement, stock rotation, and display maintenance.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-red-100 text-red-500 rounded-full mr-3">
+                  <i class="ri-error-warning-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Ineffective POS Materials</h4>
+              </div>
+              <p class="text-gray-600">Point-of-sale materials were outdated, damaged, or inconsistently deployed across retail locations.</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 mb-6 leading-relaxed">Additionally, the client faced significant competition for shelf space from both multinational and local beverage brands. With limited retail real estate available, securing optimal positioning was a constant challenge.</p>
+          
+          <p class="text-gray-600 leading-relaxed">The fragmented retail landscape in Nairobi, consisting of modern trade supermarkets, small format stores, and traditional dukas (small shops), further complicated the implementation of a standardized merchandising approach.</p>
+        </div>
+      </section>
+      
+      <!-- Approach Section -->
+      <section id="approach" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Approach</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <p class="text-gray-600 mb-8 leading-relaxed">Fadan developed a comprehensive merchandising optimization strategy based on data-driven insights and industry best practices. Our approach focused on five key pillars:</p>
+          
+          <div class="relative mb-12">
+            <div class="absolute left-8 top-0 bottom-0 w-1 bg-blue-100"></div>
+            
+            <div class="relative z-10 mb-8">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full font-bold text-xl">1</div>
+                </div>
+                <div class="ml-8 pt-3">
+                  <h3 class="text-xl font-bold mb-3 text-gray-800">Retail Audit & Analysis</h3>
+                  <p class="text-gray-600 mb-4">We conducted comprehensive audits across 200+ retail locations to assess current merchandising practices, shelf space allocation, and competitor positioning.</p>
+                  <p class="text-gray-600">Our team collected data on product visibility, share of shelf, display quality, and compliance with existing merchandising guidelines to establish a baseline for improvement.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative z-10 mb-8">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full font-bold text-xl">2</div>
+                </div>
+                <div class="ml-8 pt-3">
+                  <h3 class="text-xl font-bold mb-3 text-gray-800">Merchandising Strategy Development</h3>
+                  <p class="text-gray-600 mb-4">Based on audit findings, we developed a tailored merchandising strategy that addressed specific challenges across different retail formats.</p>
+                  <p class="text-gray-600">The strategy included planograms for optimal product placement, category management principles, and visual merchandising techniques to enhance brand presence.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative z-10 mb-8">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full font-bold text-xl">3</div>
+                </div>
+                <div class="ml-8 pt-3">
+                  <h3 class="text-xl font-bold mb-3 text-gray-800">POS Material Redesign</h3>
+                  <p class="text-gray-600 mb-4">We redesigned point-of-sale materials to create a cohesive brand experience across all retail touchpoints.</p>
+                  <p class="text-gray-600">New materials included shelf talkers, wobblers, aisle violators, and promotional displays that effectively communicated brand messaging and product benefits.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative z-10 mb-8">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full font-bold text-xl">4</div>
+                </div>
+                <div class="ml-8 pt-3">
+                  <h3 class="text-xl font-bold mb-3 text-gray-800">Merchandising Team Training</h3>
+                  <p class="text-gray-600 mb-4">We developed and implemented a comprehensive training program for the client's merchandising team, focusing on best practices, planogram implementation, and performance monitoring.</p>
+                  <p class="text-gray-600">Training sessions included both classroom instruction and in-store practical applications to ensure consistent implementation.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative z-10">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full font-bold text-xl">5</div>
+                </div>
+                <div class="ml-8 pt-3">
+                  <h3 class="text-xl font-bold mb-3 text-gray-800">Monitoring & Optimization System</h3>
+                  <p class="text-gray-600 mb-4">We implemented a digital monitoring system that allowed for real-time tracking of merchandising compliance and performance across all retail locations.</p>
+                  <p class="text-gray-600">The system included a mobile app for field teams to document implementation, report issues, and receive immediate feedback on merchandising quality.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="font-bold text-gray-800 mb-4">Strategic Considerations</h4>
+            <p class="text-gray-600 mb-4">Our approach was tailored to address the unique challenges of the Kenyan retail landscape, including:</p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Varying store formats and sizes, from large supermarkets to small dukas</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Different shopper behaviors across socioeconomic segments</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Seasonal variations in beverage consumption patterns</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Local competitive dynamics and retailer relationships</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Implementation Section -->
+      <section id="implementation" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Implementation Process</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <p class="text-gray-600 mb-8 leading-relaxed">The implementation phase was structured as a systematic rollout across all 200+ retail locations, with careful monitoring and adjustment throughout the process.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="text-center mb-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto">
+                  <span class="font-bold">1</span>
+                </div>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-3 text-center">Pilot Implementation</h4>
+              <p class="text-gray-600 text-sm">Initial rollout in 20 key stores to test and refine the merchandising strategy before full-scale implementation.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="text-center mb-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto">
+                  <span class="font-bold">2</span>
+                </div>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-3 text-center">Phased Rollout</h4>
+              <p class="text-gray-600 text-sm">Systematic implementation across remaining stores, prioritized by sales volume and strategic importance.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="text-center mb-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto">
+                  <span class="font-bold">3</span>
+                </div>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-3 text-center">Continuous Optimization</h4>
+              <p class="text-gray-600 text-sm">Ongoing monitoring and refinement based on performance data and field team feedback.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl font-bold mb-6 text-gray-800">Key Implementation Components</h3>
+          
+          <div class="mb-8">
+            <h4 class="font-bold text-gray-800 mb-4">1. Planogram Implementation</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <p class="text-gray-600 mb-4">We developed custom planograms for each store format, ensuring optimal product placement based on eye-level positioning, category flow, and brand blocking principles.</p>
+                <p class="text-gray-600">Implementation teams worked directly with store staff to reset shelves according to the new planograms, ensuring proper execution and buy-in from retail partners.</p>
+              </div>
+              <div>
+                <img src="https://readdy.ai/api/search-image?query=retail%2520planogram%2520for%2520beverage%2520products%252C%2520detailed%2520shelf%2520layout%2520diagram%252C%2520professional%2520merchandising%2520plan%252C%2520organized%2520product%2520arrangement%252C%2520technical%2520retail%2520planning%2520document%252C%2520clean%2520professional%2520design&width=600&height=400&seq=planogram1&orientation=landscape" alt="Beverage Planogram Implementation" class="w-full h-auto rounded-lg shadow-sm">
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <h4 class="font-bold text-gray-800 mb-4">2. Visual Merchandising Enhancement</h4>
+            <div class="mb-8">
+              <p class="text-gray-600 mb-6">Before and after implementation, we documented the transformation in product visibility and display quality:</p>
+              
+              <div class="comparison-slider">
+                <div class="before"></div>
+                <div class="after"></div>
+                <div class="slider" id="slider"></div>
+              </div>
+              <p class="text-sm text-gray-500 text-center mt-2">Drag the slider to see the before and after comparison</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h5 class="font-medium text-gray-800 mb-2">Brand Blocking</h5>
+                <p class="text-gray-600 text-sm">Implemented vertical brand blocking to create stronger visual impact and brand recognition.</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h5 class="font-medium text-gray-800 mb-2">Color Coordination</h5>
+                <p class="text-gray-600 text-sm">Arranged products to create visual color patterns that attract shopper attention.</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h5 class="font-medium text-gray-800 mb-2">Facing Optimization</h5>
+                <p class="text-gray-600 text-sm">Increased facings for high-margin and fast-moving products to improve visibility.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <h4 class="font-bold text-gray-800 mb-4">3. POS Material Deployment</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p class="text-gray-600 mb-4">We designed and deployed new point-of-sale materials that effectively communicated brand messaging and product benefits.</p>
+                <p class="text-gray-600">Materials were tailored to different store formats and positioned strategically to maximize shopper engagement and drive purchase decisions.</p>
+              </div>
+              <div>
+                <img src="https://readdy.ai/api/search-image?query=beverage%2520point%2520of%2520sale%2520materials%2520in%2520Kenyan%2520supermarket%252C%2520shelf%2520talkers%252C%2520wobblers%252C%2520promotional%2520displays%252C%2520professional%2520retail%2520marketing%2520materials%252C%2520branded%2520POS%2520items%252C%2520clean%2520professional%2520design&width=600&height=400&seq=pos1&orientation=landscape" alt="Point of Sale Materials" class="w-full h-auto rounded-lg shadow-sm">
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-gray-800 mb-4">4. Team Training and Deployment</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <img src="https://readdy.ai/api/search-image?query=professional%2520merchandising%2520training%2520session%2520in%2520Kenya%252C%2520diverse%2520team%2520of%2520retail%2520staff%2520learning%2520product%2520placement%252C%2520classroom%2520setting%2520with%2520beverage%2520products%252C%2520corporate%2520training%2520environment%252C%2520professional%2520development&width=600&height=400&seq=training1&orientation=landscape" alt="Merchandising Team Training" class="w-full h-auto rounded-lg shadow-sm">
+              </div>
+              <div>
+                <p class="text-gray-600 mb-4">We conducted comprehensive training sessions for 45 merchandising staff members, covering planogram implementation, visual merchandising principles, and performance monitoring.</p>
+                <p class="text-gray-600">Training included both classroom instruction and in-store practical applications to ensure consistent implementation across all locations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Results Section -->
+      <section id="results" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Results & Impact</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <p class="text-gray-600 mb-8 leading-relaxed">The merchandising optimization project delivered significant measurable results for Nairobi Refreshments Ltd, exceeding initial targets across all key performance indicators:</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto mb-4">
+                <i class="ri-eye-line ri-2x"></i>
+              </div>
+              <h3 class="text-4xl font-bold text-primary mb-2">45%</h3>
+              <p class="text-gray-800 font-medium">Increase in Product Visibility</p>
+              <p class="text-gray-600 text-sm mt-2">Across all retail locations based on visibility scoring metrics</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto mb-4">
+                <i class="ri-line-chart-line ri-2x"></i>
+              </div>
+              <h3 class="text-4xl font-bold text-primary mb-2">28%</h3>
+              <p class="text-gray-800 font-medium">Sales Growth</p>
+              <p class="text-gray-600 text-sm mt-2">Within 3 months of full implementation</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto mb-4">
+                <i class="ri-layout-grid-line ri-2x"></i>
+              </div>
+              <h3 class="text-4xl font-bold text-primary mb-2">32%</h3>
+              <p class="text-gray-800 font-medium">Increase in Shelf Share</p>
+              <p class="text-gray-600 text-sm mt-2">Compared to pre-implementation measurements</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="w-20 h-20 flex items-center justify-center bg-blue-100 text-primary rounded-full mx-auto mb-4">
+                <i class="ri-funds-line ri-2x"></i>
+              </div>
+              <h3 class="text-4xl font-bold text-primary mb-2">320%</h3>
+              <p class="text-gray-800 font-medium">ROI on Project</p>
+              <p class="text-gray-600 text-sm mt-2">Based on increased sales vs. implementation costs</p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl font-bold mb-6 text-gray-800">Performance by Store Format</h3>
+          <div class="mb-10" id="chart-container" style="width: 100%; height: 400px;"></div>
+          
+          <h3 class="text-xl font-bold mb-6 text-gray-800">Additional Business Impact</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-3">
+                  <i class="ri-customer-service-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Improved Retailer Relationships</h4>
+              </div>
+              <p class="text-gray-600 text-sm">Enhanced merchandising led to better relationships with key retailers, resulting in preferential treatment for new product launches.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-3">
+                  <i class="ri-team-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Reduced Staff Turnover</h4>
+              </div>
+              <p class="text-gray-600 text-sm">Merchandising team turnover decreased by 35% due to improved training, clearer guidelines, and performance recognition.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-primary rounded-full mr-3">
+                  <i class="ri-award-line"></i>
+                </div>
+                <h4 class="font-bold text-gray-800">Industry Recognition</h4>
+              </div>
+              <p class="text-gray-600 text-sm">Project was recognized with the "Best Retail Execution" award at the 2025 East African FMCG Excellence Awards.</p>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="font-bold text-gray-800 mb-4">Long-Term Sustainability</h4>
+            <p class="text-gray-600 mb-4">To ensure the sustainability of results, we implemented several long-term measures:</p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Developed a comprehensive merchandising playbook for ongoing reference</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Established a digital monitoring system for continuous performance tracking</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Created a merchandising excellence recognition program to maintain staff motivation</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span>Implemented quarterly merchandising audits to identify and address any compliance issues</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Testimonial Section -->
+      <section id="testimonial" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Client Testimonial</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="md:w-1/3">
+              <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520Kenyan%2520female%2520executive%252C%2520mid-40s%252C%2520business%2520attire%252C%2520confident%2520pose%252C%2520neutral%2520background%252C%2520corporate%2520portrait%252C%2520marketing%2520director&width=400&height=400&seq=testimonial1&orientation=squarish" alt="Jane Mwangi" class="w-48 h-48 object-cover rounded-full mx-auto">
+            </div>
+            <div class="md:w-2/3">
+              <div class="text-primary mb-6">
+                <i class="ri-double-quotes-l text-4xl opacity-50"></i>
+              </div>
+              <p class="text-gray-600 text-lg italic mb-6">The merchandising optimization project delivered by Fadan Consultant Limited has been transformative for our brand. Not only did we see immediate improvements in product visibility and sales, but the systematic approach they implemented has created lasting change in how we approach retail execution.</p>
+              <p class="text-gray-600 text-lg italic mb-8">Their team's deep understanding of the Kenyan retail landscape, combined with global best practices in merchandising, helped us overcome challenges we'd been facing for years. The ROI on this project has exceeded our expectations, and we're now implementing the same approach across our other product categories.</p>
+              <div>
+                <h4 class="font-bold text-gray-800 text-xl">Jane Mwangi</h4>
+                <p class="text-gray-600">Marketing Director, Nairobi Refreshments Ltd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Team Section -->
+      <section id="team" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Project Team</h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <p class="text-gray-600 mb-8 leading-relaxed">This project was led by a dedicated team of Fadan consultants with extensive experience in FMCG merchandising and retail execution:</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520Kenyan%2520male%2520consultant%252C%2520business%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520corporate%2520portrait%252C%2520project%2520lead&width=300&height=300&seq=team1&orientation=squarish" alt="David Kimani" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+              <h4 class="font-bold text-gray-800">David Kimani</h4>
+              <p class="text-primary font-medium mb-2">Project Lead</p>
+              <p class="text-gray-600 text-sm">15+ years of experience in FMCG merchandising strategy across East Africa</p>
+            </div>
+            
+            <div class="text-center">
+              <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520Kenyan%2520female%2520consultant%252C%2520business%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520corporate%2520portrait%252C%2520retail%2520specialist&width=300&height=300&seq=team2&orientation=squarish" alt="Grace Odhiambo" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+              <h4 class="font-bold text-gray-800">Grace Odhiambo</h4>
+              <p class="text-primary font-medium mb-2">Retail Specialist</p>
+              <p class="text-gray-600 text-sm">Expert in planogram development and visual merchandising optimization</p>
+            </div>
+            
+            <div class="text-center">
+              <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520Kenyan%2520male%2520consultant%252C%2520business%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520corporate%2520portrait%252C%2520data%2520analyst&width=300&height=300&seq=team3&orientation=squarish" alt="Samuel Njoroge" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+              <h4 class="font-bold text-gray-800">Samuel Njoroge</h4>
+              <p class="text-primary font-medium mb-2">Data Analyst</p>
+              <p class="text-gray-600 text-sm">Specialized in retail performance metrics and ROI analysis</p>
+            </div>
+          </div>
+          
+          <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-6">The project was executed with support from a team of 8 field consultants who managed implementation across all retail locations.</p>
+            <p class="text-gray-600">Fadan's collaborative approach ensured seamless coordination between our team, the client's marketing department, and key retail partners throughout the project.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- CTA Section -->
+      <section class="mb-16">
+        <div class="bg-primary rounded-lg shadow-md p-8 text-white">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Retail Presence?</h2>
+            <p class="text-lg opacity-90 max-w-3xl mx-auto">Let's discuss how Fadan Consultant Limited can help optimize your merchandising strategy and drive sales growth across East Africa.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#contact" data-readdy="true" class="bg-white text-primary hover:bg-gray-100 font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+              Schedule a Consultation
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+            <a href="#" class="border border-white hover:bg-white hover:text-primary font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+              Download Case Study PDF
+              <i class="ri-download-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Related Case Studies -->
+      <section>
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Related Case Studies</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Related Case Study 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://readdy.ai/api/search-image?query=logistics%2520and%2520distribution%2520network%2520for%2520FMCG%2520in%2520East%2520Africa%252C%2520delivery%2520trucks%252C%2520warehouse%2520operations%252C%2520efficient%2520supply%2520chain%252C%2520professional%2520logistics%2520management%252C%2520workers%2520handling%2520consumer%2520goods&width=600&height=400&seq=project2&orientation=landscape" alt="Distribution Network Project" class="w-full h-64 object-cover object-top">
+            <div class="p-6">
+              <span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Distribution</span>
+              <h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Distribution Network Redesign for FMCG Manufacturer</h3>
+              <p class="text-gray-600 mb-4">Optimized distribution routes across Tanzania, reducing delivery times by 35% and cutting logistics costs by 22%.</p>
+              <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Related Case Study 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://readdy.ai/api/search-image?query=professional%2520training%2520session%2520for%2520FMCG%2520sales%2520team%2520in%2520East%2520Africa%252C%2520corporate%2520training%2520environment%252C%2520diverse%2520business%2520professionals%2520engaged%2520in%2520workshop%252C%2520classroom%2520setting%2520with%2520presentation%2520screen%252C%2520business%2520attire&width=600&height=400&seq=project3&orientation=landscape" alt="Sales Team Training Project" class="w-full h-64 object-cover object-top">
+            <div class="p-6">
+              <span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Training</span>
+              <h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">Sales Leadership Training Program</h3>
+              <p class="text-gray-600 mb-4">Developed and implemented a comprehensive training program for 120+ sales managers across East Africa, reducing turnover by 40%.</p>
+              <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Related Case Study 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://readdy.ai/api/search-image?query=product%2520launch%2520event%2520for%2520FMCG%2520brand%2520in%2520Nairobi%252C%2520promotional%2520display%252C%2520brand%2520ambassadors%252C%2520product%2520sampling%252C%2520professional%2520marketing%2520event%252C%2520corporate%2520branding&width=600&height=400&seq=project5&orientation=landscape" alt="Product Launch Project" class="w-full h-64 object-cover object-top">
+            <div class="p-6">
+              <span class="text-xs font-semibold text-primary bg-blue-50 py-1 px-3 rounded-full">Product Promotion</span>
+              <h3 class="text-xl font-bold mt-4 mb-2 text-gray-800">New Product Launch Campaign</h3>
+              <p class="text-gray-600 mb-4">Designed and executed a multi-channel launch strategy for a new snack brand, achieving 85% distribution coverage within 6 weeks.</p>
+              <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="lg:w-1/4 hidden lg:block">
+      <div class="sticky top-32">
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h3 class="font-bold text-gray-800 mb-4">Table of Contents</h3>
+          <ul class="space-y-3 section-nav">
+            <li>
+              <a href="#overview" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors active">Overview</a>
+            </li>
+            <li>
+              <a href="#challenge" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">The Challenge</a>
+            </li>
+            <li>
+              <a href="#approach" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">Our Approach</a>
+            </li>
+            <li>
+              <a href="#implementation" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">Implementation</a>
+            </li>
+            <li>
+              <a href="#results" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">Results & Impact</a>
+            </li>
+            <li>
+              <a href="#testimonial" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">Client Testimonial</a>
+            </li>
+            <li>
+              <a href="#team" class="block pl-3 border-l-2 border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors">Project Team</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h3 class="font-bold text-gray-800 mb-4">Project Details</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-gray-500 text-sm">Industry</p>
+              <p class="font-medium text-gray-800">Food & Beverage (FMCG)</p>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">Location</p>
+              <p class="font-medium text-gray-800">Nairobi, Kenya</p>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">Project Duration</p>
+              <p class="font-medium text-gray-800">3 Months</p>
+            </div>
+            <div>
+              <p class="text-gray-500 text-sm">Team Size</p>
+              <p class="font-medium text-gray-800">11 Consultants</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="font-bold text-gray-800 mb-4">Need Similar Services?</h3>
+          <p class="text-gray-600 text-sm mb-4">Contact us to discuss how we can help optimize your merchandising strategy.</p>
+          <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#contact" data-readdy="true" class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 !rounded-button whitespace-nowrap transition-colors inline-flex items-center justify-center">
+            Contact Us
+            <i class="ri-arrow-right-line ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div>
+        <div class="flex items-center mb-6">
+          <span class="font-['Pacifico'] text-white text-3xl">Fadan</span>
+        </div>
+        <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/fadanconsultant/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-white rounded-full hover:bg-primary transition-colors">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/fadan-consulting-and-services" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 text-white rounded-full hover:bg-primary transition-colors">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#about" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#services" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+          <li><a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#projects" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+          <li><a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0#contact" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Services</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Distribution Strategy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Route-to-Market Planning</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consumer Insights</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Merchandising</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Product Promotion</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Leadership Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+        <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest insights on FMCG distribution in East Africa.</p>
+        <form class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Your email address" class="px-4 py-2 w-full border-none rounded-l-lg text-gray-800 text-sm">
+            <button type="submit" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg whitespace-nowrap transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex items-center space-x-3">
+          <span class="text-gray-400">Payment Methods:</span>
+          <i class="ri-visa-fill text-xl text-gray-400"></i>
+          <i class="ri-mastercard-fill text-xl text-gray-400"></i>
+          <i class="ri-paypal-fill text-xl text-gray-400"></i>
+        </div>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+      <p>&copy; 2025 Fadan Consultant Limited. All rights reserved. Member of the Strathwell Group.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-primary text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition-colors flex items-center justify-center w-12 h-12 opacity-0 invisible">
+  <i class="ri-arrow-up-line ri-lg"></i>
+</button>
+
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.querySelector('header');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+  });
+  
+  // Sticky header
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      header.classList.add('py-2');
+      header.classList.remove('py-3');
+    } else {
+      header.classList.add('py-3');
+      header.classList.remove('py-2');
+    }
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 120,
+          behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      }
+    });
+  });
+});
+</script>
+
+<script id="progress-bar-script">
+document.addEventListener('DOMContentLoaded', function() {
+  const progressBar = document.getElementById('progress-bar');
+  
+  window.addEventListener('scroll', function() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+    
+    const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+    progressBar.style.width = scrollPercentage + '%';
+  });
+});
+</script>
+
+<script id="comparison-slider-script">
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('slider');
+  const before = document.querySelector('.comparison-slider .before');
+  const after = document.querySelector('.comparison-slider .after');
+  const container = document.querySelector('.comparison-slider');
+  
+  if (!slider || !before || !after || !container) return;
+  
+  let isDown = false;
+  
+  slider.addEventListener('mousedown', () => {
+    isDown = true;
+  });
+  
+  window.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    handleMove(e);
+  });
+  
+  slider.addEventListener('touchstart', () => {
+    isDown = true;
+  });
+  
+  window.addEventListener('touchend', () => {
+    isDown = false;
+  });
+  
+  window.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    handleMove(e.touches[0]);
+  });
+  
+  function handleMove(e) {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percent = Math.max(0, Math.min(100, x / rect.width * 100));
+    
+    slider.style.left = `${percent}%`;
+    after.style.width = `${percent}%`;
+  }
+});
+</script>
+
+<script id="chart-script">
+document.addEventListener('DOMContentLoaded', function() {
+  const chartContainer = document.getElementById('chart-container');
+  if (!chartContainer) return;
+  
+  const chart = echarts.init(chartContainer);
+  
+  const option = {
+    animation: false,
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      borderColor: '#eee',
+      borderWidth: 1,
+      textStyle: {
+        color: '#1f2937'
+      }
+    },
+    legend: {
+      data: ['Before Implementation', 'After Implementation'],
+      textStyle: {
+        color: '#1f2937'
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'category',
+      data: ['Supermarkets', 'Mini-Markets', 'Convenience Stores', 'Dukas (Small Shops)'],
+      axisLine: {
+        lineStyle: {
+          color: '#ddd'
+        }
+      },
+      axisLabel: {
+        color: '#1f2937'
+      }
+    },
+    yAxis: {
+      type: 'value',
+      name: 'Sales Growth (%)',
+      nameTextStyle: {
+        color: '#1f2937'
+      },
+      axisLine: {
+        lineStyle: {
+          color: '#ddd'
+        }
+      },
+      axisLabel: {
+        color: '#1f2937',
+        formatter: '{value}%'
+      },
+      splitLine: {
+        lineStyle: {
+          color: '#eee'
+        }
+      }
+    },
+    series: [
+      {
+        name: 'Before Implementation',
+        type: 'bar',
+        data: [0, 0, 0, 0],
+        itemStyle: {
+          color: 'rgba(141, 211, 199, 1)'
+        },
+        barWidth: '20%',
+        barGap: '10%',
+        barCategoryGap: '40%'
+      },
+      {
+        name: 'After Implementation',
+        type: 'bar',
+        data: [32, 28, 25, 18],
+        itemStyle: {
+          color: 'rgba(87, 181, 231, 1)'
+        },
+        barWidth: '20%'
+      }
+    ]
+  };
+  
+  chart.setOption(option);
+  
+  window.addEventListener('resize', function() {
+    chart.resize();
+  });
+});
+</script>
+
+<script id="section-navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  const backToTop = document.getElementById('back-to-top');
+  
+  function updateActiveSection() {
+    const scrollPosition = window.scrollY + 150;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+    
+    // Show/hide back to top button
+    if (window.scrollY > 500) {
+      backToTop.classList.remove('opacity-0', 'invisible');
+      backToTop.classList.add('opacity-100', 'visible');
+    } else {
+      backToTop.classList.add('opacity-0', 'invisible');
+      backToTop.classList.remove('opacity-100', 'visible');
+    }
+  }
+  
+  window.addEventListener('scroll', updateActiveSection);
+  
+  // Back to top button
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Initial call
+  updateActiveSection();
+});
+</script>
+</body>
+</html>
