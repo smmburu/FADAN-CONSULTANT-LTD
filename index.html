@@ -16,56 +16,56 @@
 body {
 font-family: 'Roboto', sans-serif;
 color: #333;
+font-size: 15px; /* reduced from default 16px */
 }
-h1, h2, h3, h4, h5, h6 {
-font-family: 'Montserrat', sans-serif;
+h1 { font-size: 2.25rem; } /* ~36px, reduced */
+h2 { font-size: 1.5rem; }  /* ~24px, reduced */
+h3 { font-size: 1.125rem; } /* ~18px, reduced */
+h4, h5, h6 { font-size: 1rem; }
+.nav-link, nav a, .footer a, .footer li, .footer p, .footer span {
+  font-size: 0.97rem;
 }
-.hero-section {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20in%20modern%20office%20with%20FMCG%20products%20displayed%2C%20executives%20discussing%20strategy%2C%20clean%20corporate%20environment%2C%20bright%20natural%20lighting%2C%20business%20professionals%20in%20formal%20attire%2C%20panoramic%20view%20of%20Nairobi%20skyline%20visible%20through%20windows%2C%20high-end%20office%20interior&width=1600&height=800&seq=hero1&orientation=landscape');
-background-size: cover;
-background-position: center;
+input, textarea, select, button {
+  font-size: 0.97rem;
 }
-.cta-section {
-background-image: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.9)), url('https://readdy.ai/api/search-image?query=abstract%20business%20background%20with%20subtle%20patterns%2C%20professional%20corporate%20design%20elements%2C%20light%20geometric%20shapes%2C%20modern%20business%20environment%2C%20subtle%20texture%2C%20minimalist%20design&width=1600&height=600&seq=cta1&orientation=landscape');
-background-size: cover;
-background-position: center;
+.hero-section h1 { font-size: 2.5rem !important; } /* override for hero */
+@media (min-width: 768px) {
+  .hero-section h1 { font-size: 3rem !important; }
 }
-.service-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+@media (min-width: 1024px) {
+  .hero-section h1 { font-size: 3.5rem !important; }
 }
-.nav-link {
-position: relative;
+header .container {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  min-height: 72px;
 }
-.nav-link::after {
-content: '';
-position: absolute;
-width: 0;
-height: 2px;
-bottom: -4px;
-left: 0;
-background-color: #0047AB;
-transition: width 0.3s;
+header {
+  /* Remove transition and dynamic padding */
+  transition: none !important;
 }
-.nav-link:hover::after {
-width: 100%;
+header .container img {
+  height: 3.5rem !important; /* 56px, bigger logo */
+  width: auto;
 }
-.active-nav::after {
-width: 100%;
+footer .flex.items-center.mb-6 img {
+  height: 3.5rem !important; /* 56px, bigger logo in footer */
+  width: auto;
 }
-input:focus, textarea:focus {
-outline: none;
-border-color: #0047AB;
+@media (max-width: 640px) {
+  header .container img, footer .flex.items-center.mb-6 img {
+    height: 2.5rem !important;
+  }
 }
 </style>
 </head>
 <body class="bg-gray-50">
 <!-- Header/Navigation -->
-<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
 <a href="#" class="flex items-center space-x-3">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-14 md:h-16 w-auto" style="height:3.5rem;">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
 <a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
@@ -661,16 +661,16 @@ const header = document.querySelector('header');
 mobileMenuButton.addEventListener('click', function() {
 mobileMenu.classList.toggle('hidden');
 });
-// Sticky header
-window.addEventListener('scroll', function() {
-if (window.scrollY > 50) {
-header.classList.add('py-2');
-header.classList.remove('py-3');
-} else {
-header.classList.add('py-3');
-header.classList.remove('py-2');
-}
-});
+// Remove sticky header padding change on scroll
+// window.addEventListener('scroll', function() {
+// if (window.scrollY > 50) {
+// header.classList.add('py-2');
+// header.classList.remove('py-3');
+// } else {
+// header.classList.add('py-3');
+// header.classList.remove('py-2');
+// }
+// });
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
