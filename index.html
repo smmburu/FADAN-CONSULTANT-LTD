@@ -45,16 +45,16 @@ header {
   transition: none !important;
 }
 header .container img {
-  height: 4.5rem !important; /* increased from 3.5rem to 4.5rem */
+  height: 3.5rem !important; /* reduced from 4.5rem */
   width: auto;
 }
 footer .flex.items-center.mb-6 img {
-  height: 4.5rem !important; /* increased from 3.5rem to 4.5rem */
+  height: 3.5rem !important; /* reduced from 4.5rem */
   width: auto;
 }
 @media (max-width: 640px) {
   header .container img, footer .flex.items-center.mb-6 img {
-    height: 3rem !important; /* increased from 2.5rem to 3rem */
+    height: 2.5rem !important; /* reduced from 3rem */
   }
 }
 .hero-section {
@@ -67,6 +67,9 @@ footer .flex.items-center.mb-6 img {
   background-size: cover;
   background-position: center;
 }
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 <body class="bg-gray-50">
@@ -75,7 +78,7 @@ footer .flex.items-center.mb-6 img {
 <div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
 <a href="#" class="flex items-center space-x-3">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 md:h-24 w-auto" style="height:4.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 md:h-20 w-auto" style="height:3.5rem;">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
 <a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
@@ -605,7 +608,7 @@ Send Message
 <div>
 <div class="flex items-center mb-6">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto" style="height:4.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto" style="height:3.5rem;">
 </div>
 <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
 <div class="flex space-x-4">
@@ -666,10 +669,7 @@ Subscribe
 document.addEventListener('DOMContentLoaded', function() {
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-const header = document.querySelector('header');
-// Mobile menu toggle
-mobileMenuButton.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
+const header = document.querySelector('
 });
 });
 </script>
