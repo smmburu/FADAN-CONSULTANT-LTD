@@ -78,7 +78,7 @@ html {
 <div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
 <a href="#" class="flex items-center space-x-3">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 md:h-20 w-auto" style="height:3.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 md:h-24 w-auto" style="height:4.5rem;">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
 <a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
@@ -608,7 +608,7 @@ Send Message
 <div>
 <div class="flex items-center mb-6">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto" style="height:3.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto" style="height:4.5rem;">
 </div>
 <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
 <div class="flex space-x-4">
@@ -669,7 +669,35 @@ Subscribe
 document.addEventListener('DOMContentLoaded', function() {
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-const header = document.querySelector('
+// Mobile menu toggle
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+// Mobile menu toggle
+mobileMenuButton.addEventListener('click', function() {
+  mobileMenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links (with offset for fixed header)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId === '#' || !document.querySelector(targetId)) return;
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    const yOffset = 80; // height offset for fixed header
+    const y = targetElement.getBoundingClientRect().top + window.pageYOffset - yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    // Close mobile menu if open
+    if (!mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
 });
 });
 </script>
