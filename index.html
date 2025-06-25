@@ -16,7 +16,6 @@
 body {
 font-family: 'Roboto', sans-serif;
 color: #333;
-font-size: 15px; /* reduced from default 16px */
 }
 h1 { font-size: 2.25rem; } /* ~36px, reduced */
 h2 { font-size: 1.5rem; }  /* ~24px, reduced */
@@ -28,49 +27,9 @@ h4, h5, h6 { font-size: 1rem; }
 input, textarea, select, button {
   font-size: 0.97rem;
 }
-.hero-section h1 { font-size: 2.5rem !important; } /* override for hero */
-@media (min-width: 768px) {
-  .hero-section h1 { font-size: 3rem !important; }
-}
-@media (min-width: 1024px) {
-  .hero-section h1 { font-size: 3.5rem !important; }
-}
-header .container {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-  min-height: 72px;
-}
-header {
-  /* Remove transition and dynamic padding */
-  transition: none !important;
-}
-header .container img {
-  height: 3.5rem !important; /* reduced from 4.5rem */
-  width: auto;
-}
-footer .flex.items-center.mb-6 img {
-  height: 3.5rem !important; /* reduced from 4.5rem */
-  width: auto;
-}
-@media (max-width: 640px) {
-  header .container img, footer .flex.items-center.mb-6 img {
-    height: 2.5rem !important; /* reduced from 3rem */
-  }
-}
-.hero-section {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20in%20modern%20office%20with%20FMCG%20products%20displayed%2C%20executives%20discussing%20strategy%2C%20clean%20corporate%20environment%2C%20bright%20natural%20lighting%2C%20business%20professionals%20in%20formal%20attire%2C%20panoramic%20view%20of%20Nairobi%20skyline%20visible%20through%20windows%2C%20high-end%20office%20interior&width=1600&height=800&seq=hero1&orientation=landscape');
-background-size: cover;
-background-position: center;
-}
-.cta-section {
-background-image: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.9)), url('https://readdy.ai/api/search-image?query=abstract%20business%20background%20with%20subtle%20patterns%2C%20professional%20corporate%20design%20elements%2C%20light%20geometric%20shapes%2C%20modern%20business%20environment%2C%20subtle%20texture%2C%20minimalist%20design&width=1600&height=600&seq=cta1&orientation=landscape');
-background-size: cover;
-background-position: center;
-}
-.service-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
+h1 { font-size: 2.25rem; } /* ~36px */
+h2 { font-size: 1.5rem; }   /* ~24px */
+h3 { font-size: 1.125rem; } /* ~18px */
 .nav-link {
 position: relative;
 }
@@ -94,9 +53,6 @@ input:focus, textarea:focus {
 outline: none;
 border-color: #0047AB;
 }
-@media (min-width: 768px) {
-  .hero-section h1 { font-size: 2.75rem; } /* ~44px */
-}
 </style>
 </head>
 <body class="bg-gray-50">
@@ -104,15 +60,15 @@ border-color: #0047AB;
 <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
 <div class="container mx-auto px-4 py-3 flex justify-between items-center">
 <a href="#" class="flex items-center space-x-3">
-  <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
+  <!-- Larger logo -->
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto"> <!-- was h-16 -->
 </a>
-<nav class="hidden md:flex items-center space-x-6"> <!-- less space-x for compactness -->
-<a href="#" class="nav-link active-nav">Home</a>
-<a href="#about" class="nav-link">About Us</a>
-<a href="#services" class="nav-link">Services</a>
-<a href="#projects" class="nav-link">Projects</a>
-<a href="#contact" class="nav-link">Contact</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+<a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
+<a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
+<a href="#projects" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
+<a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
 </nav>
 <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700" id="mobile-menu-button">
 <i class="ri-menu-line ri-2x"></i>
