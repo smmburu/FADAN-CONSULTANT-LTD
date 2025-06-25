@@ -198,7 +198,7 @@ Explore Services
 </div>
 <h3 class="text-xl font-bold mb-4 text-gray-800">Distribution Strategy</h3>
 <p class="text-gray-600 mb-6">We develop comprehensive distribution strategies that optimize your supply chain, reduce costs, and ensure your products reach consumers efficiently across urban and rural markets.</p>
-<a href="Distribution-strategy.html" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
 Learn More
 <i class="ri-arrow-right-line ml-2"></i>
 </a>
@@ -210,7 +210,7 @@ Learn More
 </div>
 <h3 class="text-xl font-bold mb-4 text-gray-800">Route-to-Market Planning</h3>
 <p class="text-gray-600 mb-6">Our tailored route-to-market strategies help you navigate the complex East African retail landscape, identifying the most effective channels to reach your target consumers.</p>
-<a href="service2.html" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
+<a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/de0ee1d6-b817-49de-a780-dccd74a6089f" data-readdy="true" class="text-primary font-medium inline-flex items-center hover:underline">
 Learn More
 <i class="ri-arrow-right-line ml-2"></i>
 </a>
@@ -665,20 +665,41 @@ Subscribe
 </div>
 </div>
 </footer>
-<!-- Modal for Distribution Strategy Learn More -->
-<div id="distribution-modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[9999] hidden flex items-center justify-center">
-  <div id="distribution-modal-content" class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
-    <button id="distribution-modal-close" class="absolute top-3 right-3 text-gray-500 hover:text-primary text-2xl" aria-label="Close">&times;</button>
-    <div id="distribution-modal-body" class="p-6">
-      <!-- AJAX content will be loaded here -->
-      <div class="flex items-center justify-center h-40 text-gray-400">
-        <i class="ri-loader-4-line ri-spin text-3xl mr-2"></i> Loading...
-      </div>
-    </div>
-  </div>
-</div>
-
 <script id="navigation-script">
 document.addEventListener('DOMContentLoaded', function() {
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
+// Mobile menu toggle
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+// Mobile menu toggle
+mobileMenuButton.addEventListener('click', function() {
+  mobileMenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links (with offset for fixed header)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId === '#' || !document.querySelector(targetId)) return;
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    const yOffset = 80; // height offset for fixed header
+    const y = targetElement.getBoundingClientRect().top + window.pageYOffset - yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    // Close mobile menu if open
+    if (!mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+});
+});
+</script>
+</body>
+</html>
