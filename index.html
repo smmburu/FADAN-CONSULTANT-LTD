@@ -45,16 +45,16 @@ header {
   transition: none !important;
 }
 header .container img {
-  height: 3.5rem !important; /* 56px, bigger logo */
+  height: 4.5rem !important; /* increased from 3.5rem to 4.5rem */
   width: auto;
 }
 footer .flex.items-center.mb-6 img {
-  height: 3.5rem !important; /* 56px, bigger logo in footer */
+  height: 4.5rem !important; /* increased from 3.5rem to 4.5rem */
   width: auto;
 }
 @media (max-width: 640px) {
   header .container img, footer .flex.items-center.mb-6 img {
-    height: 2.5rem !important;
+    height: 3rem !important; /* increased from 2.5rem to 3rem */
   }
 }
 </style>
@@ -65,7 +65,7 @@ footer .flex.items-center.mb-6 img {
 <div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
 <a href="#" class="flex items-center space-x-3">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-14 md:h-16 w-auto" style="height:3.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 md:h-24 w-auto" style="height:4.5rem;">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
 <a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
@@ -595,7 +595,7 @@ Send Message
 <div>
 <div class="flex items-center mb-6">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto" style="height:4.5rem;">
 </div>
 <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
 <div class="flex space-x-4">
@@ -671,94 +671,3 @@ mobileMenu.classList.toggle('hidden');
 // header.classList.remove('py-2');
 // }
 // });
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
-// Close mobile menu if open
-if (!mobileMenu.classList.contains('hidden')) {
-mobileMenu.classList.add('hidden');
-}
-}
-});
-});
-});
-</script>
-<script id="testimonial-slider-script">
-document.addEventListener('DOMContentLoaded', function() {
-const wrapper = document.getElementById('testimonial-wrapper');
-const dots = document.querySelectorAll('.testimonial-dot');
-let currentSlide = 0;
-const slideCount = dots.length;
-// Set initial position
-updateSliderPosition();
-// Auto slide every 5 seconds
-setInterval(nextSlide, 5000);
-// Dot navigation
-dots.forEach((dot, index) => {
-dot.addEventListener('click', () => {
-currentSlide = index;
-updateSliderPosition();
-});
-});
-function nextSlide() {
-currentSlide = (currentSlide + 1) % slideCount;
-updateSliderPosition();
-}
-function updateSliderPosition() {
-// Calculate translation based on screen size
-let translateValue;
-if (window.innerWidth >= 768) {
-translateValue = -currentSlide * 33.333;
-} else {
-translateValue = -currentSlide * 100;
-}
-wrapper.style.transform = `translateX(${translateValue}%)`;
-// Update dots
-dots.forEach((dot, index) => {
-if (index === currentSlide) {
-dot.classList.add('bg-primary');
-dot.classList.remove('bg-gray-300');
-dot.classList.add('opacity-100');
-dot.classList.remove('opacity-50');
-} else {
-dot.classList.remove('bg-primary');
-dot.classList.add('bg-gray-300');
-dot.classList.remove('opacity-100');
-dot.classList.add('opacity-50');
-}
-});
-}
-// Handle window resize
-window.addEventListener('resize', updateSliderPosition);
-});
-</script>
-<script id="project-filter-script">
-document.addEventListener('DOMContentLoaded', function() {
-const filterButtons = document.querySelectorAll('.project-filter-btn');
-filterButtons.forEach(button => {
-button.addEventListener('click', function() {
-// Remove active class from all buttons
-filterButtons.forEach(btn => {
-btn.classList.remove('active', 'bg-primary', 'text-white');
-btn.classList.add('text-gray-700', 'hover:bg-gray-200');
-});
-// Add active class to clicked button
-this.classList.add('active', 'bg-primary', 'text-white');
-this.classList.remove('text-gray-700', 'hover:bg-gray-200');
-// Here you would typically filter the projects
-// For this demo, we're just showing the UI interaction
-});
-});
-});
-</script>
-</body>
-</html>
