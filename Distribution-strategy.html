@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%2520merchandising%2520display%2520of%2520beverage%2520products%2520in%2520Kenyan%2520supermarket%252C%2520well-organized%2520shelves%2520with%2520colorful%2520drinks%252C%2520product%2520visibility%2520optimization%252C%2520clean%2520retail%2520environment%252C%2520modern%2520supermarket%2520interior%2520with%2520bright%2520lighting%2520and%2520professional%2520branding&width=1600&height=800&seq=casestudy1&orientation=landscape');
   background-size: cover;
   background-position: center;
+  padding-top: 96px !important; /* 96px = 6rem, matches nav height */
+}
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 72px !important; /* 72px = 4.5rem for mobile nav height */
+  }
 }
 .comparison-slider {
   position: relative;
@@ -123,17 +129,30 @@ input:focus, textarea:focus {
   font-weight: 500;
   border-left-color: #0047AB;
 }
+header .container img {
+  height: 3.5rem !important;
+  width: auto;
+}
+@media (max-width: 640px) {
+  header .container img {
+    height: 2.5rem !important;
+  }
+}
 </style>
 </head>
 <body class="bg-gray-50">
 <div class="progress-bar" id="progress-bar"></div>
 
 <!-- Header/Navigation -->
-<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <a href="#" class="flex items-center space-x-3">
-      <!-- Replace text logo with larger image logo -->
-      <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
+      <!-- Logo with correct dimensions -->
+      <img src="assets/logo.png" alt="Fadan Logo" class="h-14 md:h-16 w-auto" style="height:3.5rem;">
+      <div class="hidden md:block">
+        <h1 class="text-lg font-semibold text-gray-800">Fadan Consultant Limited</h1>
+        <p class="text-xs text-gray-500">Member of Strathwell Group</p>
+      </div>
     </a>
     <nav class="hidden md:flex items-center space-x-8">
       <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
@@ -149,7 +168,7 @@ input:focus, textarea:focus {
   <!-- Mobile Menu -->
   <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
     <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-      <a href="index.html" data-readdy="true" class="text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+      <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
       <a href="#about" class="text-gray-800 font-medium py-2 border-b border-gray-100">About Us</a>
       <a href="#services" class="text-gray-800 font-medium py-2 border-b border-gray-100">Services</a>
       <a href="#projects" class="text-gray-800 font-medium py-2 border-b border-gray-100">Projects</a>
@@ -158,17 +177,16 @@ input:focus, textarea:focus {
   </div>
 </header>
 
-<!-- Back to Projects Button -->
-<div class="fixed left-6 top-24 z-40">
-  <a href="index.html" class="flex items-center space-x-2 bg-white shadow-md rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors">
-    <i class="ri-arrow-left-line mr-2"></i>
-    <span class="font-medium">Back to Projects</span>
-  </a>
-</div>
-
 <!-- Hero Section -->
-<section class="hero-section pt-24 pb-16 flex items-center">
+<section class="hero-section pt-24 pb-16 flex items-center relative">
   <div class="container mx-auto px-4 w-full">
+    <!-- Back to Projects Button (top right of hero) -->
+    <div class="absolute right-0 top-0 mt-4 mr-4 z-40">
+      <a href="https://readdy.ai/home/7a7ca98d-8175-46e2-9a5c-ca2265888c93/4113dc2e-b1be-4377-99cc-00f2feec63d0" data-readdy="true" class="flex items-center bg-white shadow-md rounded-full py-2 px-4 text-primary hover:bg-gray-50 transition-colors">
+        <span class="font-medium mr-2">Back to Projects</span>
+        <i class="ri-arrow-right-line"></i>
+      </a>
+    </div>
     <div class="max-w-4xl text-white">
       <div class="flex items-center mb-4">
         <span class="text-xs font-semibold bg-primary py-1 px-3 rounded-full">Case Study</span>
