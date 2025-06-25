@@ -12,73 +12,41 @@
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#0047AB',secondary:'#4A4A4A'},borderRadius:{'button':'8px'}}}}</script>
   <style>
-    body { font-family: 'Roboto', sans-serif; color: #333; font-size: 15px; }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.125rem; }
-    h4, h5, h6 { font-size: 1rem; }
-    .nav-link, nav a, .footer a, .footer li, .footer p, .footer span {
-      font-size: 0.97rem;
-    }
-    input, textarea, select, button {
-      font-size: 0.97rem;
-    }
-    .hero-section h1 { font-size: 2.5rem !important; }
-    @media (min-width: 768px) {
-      .hero-section h1 { font-size: 3rem !important; }
-    }
-    @media (min-width: 1024px) {
-      .hero-section h1 { font-size: 3.5rem !important; }
-    }
-    header .container {
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
-      min-height: 72px;
-    }
-    header {
-      transition: none !important;
-    }
-    header .container img {
-      height: 3.5rem !important;
-      width: auto;
-    }
-    footer .flex.items-center.mb-6 img {
-      height: 3.5rem !important;
-      width: auto;
-    }
-    @media (max-width: 640px) {
-      header .container img, footer .flex.items-center.mb-6 img {
-        height: 2.5rem !important;
-      }
-    }
+    body { font-family: 'Roboto', sans-serif; color: #333; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
     .hero-section { background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://readdy.ai/api/search-image?query=distribution%20network%20FMCG%20East%20Africa%20logistics%20trucks%20warehouse%20supply%20chain%20Nairobi&width=1600&height=800'); background-size: cover; background-position: center; }
-    .nav-link { position: relative; }
+    .nav-link { position: relative; font-size: 1rem; padding: 0.25rem 0.5rem; transition: color 0.2s; }
     .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #0047AB; transition: width 0.3s; }
     .nav-link:hover::after, .active-nav::after { width: 100%; }
+    .active-nav { color: #0047AB !important; font-weight: 700; }
+    .active-nav::after { width: 100%; background-color: #0047AB; }
     .faq-answer { display: none; }
     .faq-open .faq-answer { display: block; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);}
     input:focus, textarea:focus, select:focus { outline: none; border-color: #0047AB; }
+    @media (min-width: 768px) {
+      .hero-section h1 { font-size: 2.75rem; }
+    }
   </style>
 </head>
 <body class="bg-gray-50">
 <!-- Header/Navigation -->
 <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-  <div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <a href="index.html" class="flex items-center space-x-3">
       <!-- Replace text logo with larger image logo -->
-      <img src="assets/logo.png" alt="Fadan Logo" class="h-14 md:h-16 w-auto" style="height:3.5rem;">
+      <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
       <div class="hidden md:block">
         <h1 class="text-lg font-semibold text-gray-800">Fadan Consultant Limited</h1>
         <p class="text-xs text-gray-500">Member of Strathwell Group</p>
       </div>
     </a>
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="index.html" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
-      <a href="index.html#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
-      <a href="index.html#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
-      <a href="#" class="nav-link active-nav text-primary font-bold transition-colors">Distribution Strategy</a>
-      <a href="index.html#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+    <nav class="hidden md:flex items-center space-x-6"> <!-- less space-x for compactness -->
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#about" class="nav-link">About Us</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="#" class="nav-link active-nav">Distribution Strategy</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
     </nav>
     <a href="index.html#services" class="ml-4 bg-gray-100 hover:bg-gray-200 text-primary font-medium py-2 px-4 rounded-button transition-colors hidden md:inline-flex items-center">
       <i class="ri-arrow-left-line mr-2"></i> Back to Services
@@ -432,7 +400,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
       <div>
         <div class="flex items-center mb-6">
-          <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
+          <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto"> <!-- was h-16 -->
         </div>
         <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
         <div class="flex space-x-4">

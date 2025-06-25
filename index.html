@@ -58,34 +58,61 @@ footer .flex.items-center.mb-6 img {
   }
 }
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20in%20modern%20office%20with%20FMCG%20products%20displayed%2C%20executives%20discussing%20strategy%2C%20clean%20corporate%20environment%2C%20bright%20natural%20lighting%2C%20business%20professionals%20in%20formal%20attire%2C%20panoramic%20view%20of%20Nairobi%20skyline%20visible%20through%20windows%2C%20high-end%20office%20interior&width=1600&height=800&seq=hero1&orientation=landscape');
-  background-size: cover;
-  background-position: center;
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20in%20modern%20office%20with%20FMCG%20products%20displayed%2C%20executives%20discussing%20strategy%2C%20clean%20corporate%20environment%2C%20bright%20natural%20lighting%2C%20business%20professionals%20in%20formal%20attire%2C%20panoramic%20view%20of%20Nairobi%20skyline%20visible%20through%20windows%2C%20high-end%20office%20interior&width=1600&height=800&seq=hero1&orientation=landscape');
+background-size: cover;
+background-position: center;
 }
 .cta-section {
-  background-image: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.9)), url('https://readdy.ai/api/search-image?query=abstract%20business%20background%20with%20subtle%20patterns%2C%20professional%20corporate%20design%20elements%2C%20light%20geometric%20shapes%2C%20modern%20business%20environment%2C%20subtle%20texture%2C%20minimalist%20design&width=1600&height=600&seq=cta1&orientation=landscape');
-  background-size: cover;
-  background-position: center;
+background-image: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.9)), url('https://readdy.ai/api/search-image?query=abstract%20business%20background%20with%20subtle%20patterns%2C%20professional%20corporate%20design%20elements%2C%20light%20geometric%20shapes%2C%20modern%20business%20environment%2C%20subtle%20texture%2C%20minimalist%20design&width=1600&height=600&seq=cta1&orientation=landscape');
+background-size: cover;
+background-position: center;
 }
-html {
-  scroll-behavior: smooth;
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #0047AB;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.active-nav::after {
+width: 100%;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #0047AB;
+}
+@media (min-width: 768px) {
+  .hero-section h1 { font-size: 2.75rem; } /* ~44px */
 }
 </style>
 </head>
 <body class="bg-gray-50">
 <!-- Header/Navigation -->
-<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-<div class="container mx-auto px-4 py-2 flex justify-between items-center" style="min-height:72px;">
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
 <a href="#" class="flex items-center space-x-3">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 md:h-24 w-auto" style="height:4.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
 </a>
-<nav class="hidden md:flex items-center space-x-8">
-<a href="#" class="nav-link active-nav text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
-<a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About Us</a>
-<a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
-<a href="#projects" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
-<a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+<nav class="hidden md:flex items-center space-x-6"> <!-- less space-x for compactness -->
+<a href="#" class="nav-link active-nav">Home</a>
+<a href="#about" class="nav-link">About Us</a>
+<a href="#services" class="nav-link">Services</a>
+<a href="#projects" class="nav-link">Projects</a>
+<a href="#contact" class="nav-link">Contact</a>
 </nav>
 <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700" id="mobile-menu-button">
 <i class="ri-menu-line ri-2x"></i>
@@ -608,7 +635,7 @@ Send Message
 <div>
 <div class="flex items-center mb-6">
   <!-- Replace text logo with larger image logo -->
-  <img src="assets/logo.png" alt="Fadan Logo" class="h-20 w-auto" style="height:4.5rem;">
+  <img src="assets/logo.png" alt="Fadan Logo" class="h-16 w-auto">
 </div>
 <p class="text-gray-400 mb-6">Fadan Consultant Limited is a premier FMCG consulting firm based in Nairobi, helping brands optimize distribution and grow across East Africa since 2015.</p>
 <div class="flex space-x-4">
@@ -685,19 +712,90 @@ mobileMenuButton.addEventListener('click', function() {
 });
 // Smooth scrolling for anchor links (with offset for fixed header)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href');
-    if (targetId === '#' || !document.querySelector(targetId)) return;
-    e.preventDefault();
-    const targetElement = document.querySelector(targetId);
-    const yOffset = 80; // height offset for fixed header
-    const y = targetElement.getBoundingClientRect().top + window.pageYOffset - yOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    // Close mobile menu if open
-    if (!mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.add('hidden');
-    }
-  });
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+});
+</script>
+<script id="testimonial-slider-script">
+document.addEventListener('DOMContentLoaded', function() {
+const wrapper = document.getElementById('testimonial-wrapper');
+const dots = document.querySelectorAll('.testimonial-dot');
+let currentSlide = 0;
+const slideCount = dots.length;
+// Set initial position
+updateSliderPosition();
+// Auto slide every 5 seconds
+setInterval(nextSlide, 5000);
+// Dot navigation
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+currentSlide = index;
+updateSliderPosition();
+});
+});
+function nextSlide() {
+currentSlide = (currentSlide + 1) % slideCount;
+updateSliderPosition();
+}
+function updateSliderPosition() {
+// Calculate translation based on screen size
+let translateValue;
+if (window.innerWidth >= 768) {
+translateValue = -currentSlide * 33.333;
+} else {
+translateValue = -currentSlide * 100;
+}
+wrapper.style.transform = `translateX(${translateValue}%)`;
+// Update dots
+dots.forEach((dot, index) => {
+if (index === currentSlide) {
+dot.classList.add('bg-primary');
+dot.classList.remove('bg-gray-300');
+dot.classList.add('opacity-100');
+dot.classList.remove('opacity-50');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+dot.classList.remove('opacity-100');
+dot.classList.add('opacity-50');
+}
+});
+}
+// Handle window resize
+window.addEventListener('resize', updateSliderPosition);
+});
+</script>
+<script id="project-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.project-filter-btn');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+// Here you would typically filter the projects
+// For this demo, we're just showing the UI interaction
+});
 });
 });
 </script>
